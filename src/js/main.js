@@ -6,28 +6,6 @@ function removeClass(e, classes) {
   e.classList && e.classList.remove(...classes.split(" "));
 }
 
-function carousel_calc_offset(e) {
-  const carouselId = document.getElementById("carousel");
-  const carouselContainer = carouselId.getElementsByClassName("container")[0];
-  const carouselWrapper = carouselId.getElementsByClassName("flex")[0];
-
-  const carouselOffset = carouselContainer.getBoundingClientRect().left;
-
-  const divOffset1 = document.createElement("div");
-  divOffset1.style.minWidth = `${carouselOffset - 16}px`;
-
-  const divOffset2 = document.createElement("div");
-  divOffset2.style.minWidth = `${carouselOffset - 16}px`;
-
-  carouselWrapper.prepend(divOffset1);
-  carouselWrapper.append(divOffset2);
-}
-
-if (document.getElementById("carousel")) {
-  window.addEventListener("load", carousel_calc_offset);
-  window.addEventListener("resize", carousel_calc_offset);
-}
-
 function accordion() {
   const accordionContainer = document.getElementsByClassName("accordion");
 
