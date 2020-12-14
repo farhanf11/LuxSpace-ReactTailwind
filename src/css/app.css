@@ -123,3 +123,15 @@ ul.breadcrumb li:last-child a {
     width: 560px;
   }
 }
+
+a.cart svg g circle.dot {
+  @apply hidden;
+}
+
+a.cart.cart-filled svg g circle.dot {
+  @apply block;
+}
+
+button[disabled] {
+  @apply bg-gray-300 hover:bg-gray-300 text-gray-400 hover:text-gray-400 cursor-not-allowed;
+}
