@@ -31,6 +31,9 @@ function slide(wrapper, items) {
   items.addEventListener("touchstart", dragStart);
   items.addEventListener("touchend", dragEnd);
   items.addEventListener("touchmove", dragAction);
+  items.addEventListener("click", function (event) {
+    !allowShift && event.preventDefault();
+  });
 
   // Transition events
   items.addEventListener("transitionend", checkIndex);
