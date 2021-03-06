@@ -856,6 +856,9 @@ module.exports = {
     "disabled",
   ],
   variants: {
+    extend: {
+      inset: ["checked"],
+    },
     accessibility: ["responsive", "focus-within", "focus"],
     alignContent: ["responsive"],
     alignItems: ["responsive"],
