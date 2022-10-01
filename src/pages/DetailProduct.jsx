@@ -8,7 +8,13 @@ export default function DetailProduct (){
     return(
         <>
             <Navbar/>
-            <BreadCrumb/>
+            <BreadCrumb
+                list={[
+                    {url: "/", name: "Home /"},
+                    {url: "/details/1", name: "Office /"},
+                    {url: "/details/1/product/12", name: "Details"},
+                ]}
+            />
 
             <section className="container mx-auto">
                 <div className="flex flex-wrap my-4 md:my-12">

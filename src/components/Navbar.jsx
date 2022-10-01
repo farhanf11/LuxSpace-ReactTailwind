@@ -1,61 +1,63 @@
 import React from "react";
 import {Link} from "react-router-dom"
 
-function Navbar(){
+function Navbar({theme, position}){
     return( 
-        <header class="absolute w-full z-50 px-4">
-            <div class="container mx-auto py-5">
-                <div class="flex flex-stretch items-center">
-                <div class="w-56 items-center flex">
-                    <img
-                    src="./assets/images/content/logo.png"
-                    alt="Luxspace | Fulfill your house with beautiful furniture"
-                    />
+        <header className={[position, "w-full z-50 px-4"].join(" ")}>
+            <div className="container mx-auto py-5">
+                <div className="flex flex-stretch items-center">
+                <div className="w-56 items-center flex">
+                    <Link to='/'>
+                        <img
+                        src="/assets/images/content/logo.png"
+                        alt="Luxspace | Fulfill your house with beautiful furniture"
+                        />
+                    </Link>
                 </div>
-                <div class="w-full"></div>
-                <div class="w-auto">
+                <div className="w-full"></div>
+                <div className="w-auto">
                     <ul
-                    class="fixed bg-white inset-0 flex flex-col invisible items-center justify-center opacity-0 md:visible md:flex-row md:bg-transparent md:relative md:opacity-100 md:flex md:items-center font-semibold"
+                    className="fixed bg-white inset-0 flex flex-col invisible items-center justify-center opacity-0 md:visible md:flex-row md:bg-transparent md:relative md:opacity-100 md:flex md:items-center font-semibold"
                     id="menu"
                     >
-                    <li class="mx-3 py-6 md:py-0 lg:text-lg">
-                        <Link to='/' class={[
+                    <li className="mx-3 py-6 md:py-0 lg:text-lg">
+                        <Link to='/' className={[
                             "hover-underline",
                             theme === "white"
                             ? "text-black md:text-white"
                             : "text-white md:text-black"
-                        ]}
+                        ].join(" ")}
                         >Home</Link>
                     </li>
-                    <li class="mx-3 py-6 md:py-0 lg:text-lg">
-                        <Link to='/details' class={[
+                    <li className="mx-3 py-6 md:py-0 lg:text-lg">
+                        <Link to='/details' className={[
                             "hover-underline",
                             theme === "white"
                             ? "text-black md:text-white"
                             : "text-white md:text-black"
-                        ]}
+                        ].join(" ")}
                         >Catalog</Link>
                     </li>
-                    <li class="mx-3 py-6 md:py-0 lg:text-lg">
-                        <Link to='/cart' class={[
+                    <li className="mx-3 py-6 md:py-0 lg:text-lg">
+                        <Link to='/cart' className={[
                             "hover-underline",
                             theme === "white"
                             ? "text-black md:text-white"
                             : "text-white md:text-black"
-                        ]}
+                        ].join(" ")}
                         >Cart</Link>
                     </li>
                     </ul>
                 </div>
-                <div class="w-auto">
-                    <ul class="items-center flex">
-                    <li class="ml-6 block md:hidden">
+                <div className="w-auto">
+                    <ul className="items-center flex">
+                    <li className="ml-6 block md:hidden">
                         <button
                         id="menu-toggler"
-                        class="relative flex z-50 items-center justify-center w-8 h-8 text-black md:text-white focus:outline-none"
+                        className="relative flex z-50 items-center justify-center w-8 h-8 text-black md:text-white focus:outline-none"
                         >
                         <svg
-                            class="fill-current"
+                            className="fill-current"
                             width="18"
                             height="17"
                             viewBox="0 0 18 17"
@@ -72,14 +74,18 @@ function Navbar(){
                         </svg>
                         </button>
                     </li>
-                    <li class="ml-6">
+                    <li className="ml-6">
                         <Link
                         id="header-cart"
-                        class="flex items-center justify-center w-8 h-8 text-black md:text-white"
+                        className={["flex items-center justify-center w-8 h-8",
+                            theme === "white"
+                            ? "text-black md:text-white"
+                            : "text-white md:text-black"
+                        ].join(" ")}
                         to="/cart"
                         >
                         <svg
-                            class="fill-current"
+                            className="fill-current"
                             width="26"
                             height="24"
                             viewBox="0 0 26 24"

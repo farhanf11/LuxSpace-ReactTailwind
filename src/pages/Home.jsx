@@ -10,7 +10,7 @@ import AsideMenu from "../components/AsideMenu";
 export default function Home (props){
     return(
         <>
-            <Navbar/>
+            <Navbar theme='white' position='absolute'/>
             <Hero/>
             <BrowsRoom/>
             <JustArrived/>
