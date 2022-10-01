@@ -1,17 +1,14 @@
 import React from "react";
 import {Link} from "react-router-dom"
-import Cart from "../pages/Cart";
-import DetailProduct from "../pages/DetailProduct";
-import Home from "../pages/Home";
 
 function Navbar(){
-    return(
+    return( 
         <header class="absolute w-full z-50 px-4">
             <div class="container mx-auto py-5">
                 <div class="flex flex-stretch items-center">
                 <div class="w-56 items-center flex">
                     <img
-                    src="../images/content/logo.png"
+                    src="./assets/images/content/logo.png"
                     alt="Luxspace | Fulfill your house with beautiful furniture"
                     />
                 </div>
@@ -22,15 +19,30 @@ function Navbar(){
                     id="menu"
                     >
                     <li class="mx-3 py-6 md:py-0 lg:text-lg">
-                        <Link to='/' class="text-black hover:underline"
+                        <Link to='/' class={[
+                            "hover-underline",
+                            theme === "white"
+                            ? "text-black md:text-white"
+                            : "text-white md:text-black"
+                        ]}
                         >Home</Link>
                     </li>
                     <li class="mx-3 py-6 md:py-0 lg:text-lg">
-                        <Link to='/details' class="text-black hover:underline"
+                        <Link to='/details' class={[
+                            "hover-underline",
+                            theme === "white"
+                            ? "text-black md:text-white"
+                            : "text-white md:text-black"
+                        ]}
                         >Catalog</Link>
                     </li>
                     <li class="mx-3 py-6 md:py-0 lg:text-lg">
-                        <Link to='/cart' class="text-black hover:underline"
+                        <Link to='/cart' class={[
+                            "hover-underline",
+                            theme === "white"
+                            ? "text-black md:text-white"
+                            : "text-white md:text-black"
+                        ]}
                         >Cart</Link>
                     </li>
                     </ul>
@@ -64,7 +76,7 @@ function Navbar(){
                         <Link
                         id="header-cart"
                         class="flex items-center justify-center w-8 h-8 text-black md:text-white"
-                        href="cart.html"
+                        to="/cart"
                         >
                         <svg
                             class="fill-current"
